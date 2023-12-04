@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #taskForm {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      cursor: pointer;
+      margin-bottom: 5px;
+    }
+
+    li:hover {
+      background-color: #eee;
+    }
+
+    .completed {
+      text-decoration: line-through;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <div id="taskForm">
+    <form id="addTaskForm">
+      <label for="taskName">Nova Tarefa:</label>
+      <input type="text" id="taskName" required>
+      <button type="submit">Adicionar Tarefa</button>
+    </form>
+  </div>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    $(document).ready(function() {
+      
+      function addTask(taskName) {
+        const listItem = $('<li>').text(taskName);
+        $('#taskList').append(listItem);
+      }
+
+      
+      $('#addTaskForm').submit(function(event) {
+        event.preventDefault();
+        const taskName = $('#taskName').val();
+        if (taskName) {
+          addTask(taskName);
+          $('#taskName').val(''); 
+        }
+      });
+
+      
+      $('#taskList').on('click', 'li', function() {
+        $(this).toggleClass('completed');
+      });
+    });
+  </script>
+
+</body>
+</html>
