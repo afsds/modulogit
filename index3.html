@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Loja</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .about-image {
+      flex: 1;
+      max-width: 400px;
+      margin-right: 20px;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .product-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .product {
+      width: 200px;
+      margin: 10px;
+      border: 1px solid #0a0a0a;
+      padding: 10px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .add-to-cart {
+      background-color: #4caf50;
+      color: rgb(255, 255, 255);
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+    }
+    header .container,
+    section .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(205, 206, 206);
+  }
+
+    @media (max-width: 768px) {
+        .about-section, .product-section {
+        flex-direction: column;
+      }
+    
+
+      .about-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .product {
+        width: 100%;
+      }
+
+      header{
+    padding: 16px 5;
+    background-color: rgb(255, 138, 230);
+    color: rgb(248, 248, 248);
+ }
+
+
+ }
+ header nav li{
+    display: inline-flex;
+    margin-left: 16px;
+ }
+ header nav li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    text-align: right;
+ }
+  
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="container">
+        <h1>Loja</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="#about-text">Sobre a loja</a>
+            </li>
+            <li>
+                <a href="#product">Produtos</a>
+            </li>
+        </ul>
+    </nav>
+    
+    </div>
+</header>
+
+  <section id="#about-text" class="about-section">
+    <div class="about-image">
+      <img src="images/loja.jpg" alt="Imagem da Loja">
+    </div>
+    <div class="about-text">
+      <h2>Sobre a Loja</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam</p>
+      <p>Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+    </div>
+  </section>
+  
+  <section id="product" class="product-section">
+    <div class="product">
+      <img src="images/cr7.jpg" alt="Produto 1">
+      <h3>Nike mercurial</h3>
+      <p>Chuteira nike mercurial preta e verde do Cristiano Ronaldo</p>
+      <button class="add-to-cart" onclick="addToCart('Produto 1')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="images/cr7(2).jpg" alt="Produto 2">
+      <h3>Nike mercurial</h3>
+      <p>Chuteira nike mercurial vermelha do Cristiano Ronaldo</p>
+      <button class="add-to-cart" onclick="addToCart('Produto 2')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="images/cr3.jpeg" alt="Produto 3">
+      <h3>Nike mercurial</h3>
+      <p>Chuteira nike mercurial roxa do Cristiano Ronaldo</p>
+      <button class="add-to-cart" onclick="addToCart('Produto 3')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="images/cr4.jpg" alt="Produto 4">
+      <h3>Nike mercurial</h3>
+      <p>Chuteira nike mercurial preta do Cristiano Ronaldo</p>
+      <button class="add-to-cart" onclick="addToCart('Produto 4')">Adicionar ao Carrinho</button>
+    </div>
+  </section>
+
+  <script>
+    function addToCart(productName) {
+      alert(`Produto "${productName}" adicionado ao carrinho!`);
+      
+    }
+  </script>
+
+</body>
+</html>
+
